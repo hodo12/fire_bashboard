@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background: #0f172a;
+    color: white;
+}
+
+
+/* HEADER */
+
+header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 30px;
+
+    background: #111827;
+
+    border-bottom: 1px solid #334155;
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: 24px;
+
+    letter-spacing: 2px;
+}
+
+header p {
+
+    margin: 5px 0 0;
+
+    color: #94a3b8;
+}
+
+.online {
+    color: #22c55e;
+}
+
+
+/* 전체 레이아웃 */
+
+main {
+
+    display: grid;
+
+    grid-template-columns: 3fr 1fr;
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+
+/* 공통 카드 */
+
+.map-card,
+.status-card,
+.event-card {
+
+    background: #1e293b;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    border: 1px solid #334155;
+}
+
+
+/* 제목 */
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.section-title span {
+
+    background: #dc2626;
+
+    padding: 5px 10px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+}
+
+
+/* 지도 */
+
+#map {
+
+    height: 500px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    margin-top: 15px;
+
+
+    background-color: #e2e8f0;
+
+    background-image:
+
+        linear-gradient(
+            #cbd5e1 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            #cbd5e1 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+}
+
+
+/* 로봇 */
+
+#robot {
+
+    position: absolute;
+
+    left: 20%;
+    top: 60%;
+
+    font-size: 35px;
+
+    transform: translate(-50%, -50%);
+
+    transition: 0.5s linear;
+}
+
+
+/* 화재 마커 */
+
+.fire {
+
+    position: absolute;
+
+    font-size: 35px;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* 상태 */
+
+.status-card h2 {
+    margin-top: 0;
+}
+
+.status-box {
+
+    background: #0f172a;
+
+    margin-bottom: 12px;
+
+    padding: 15px;
+
+    border-radius: 8px;
+}
+
+.status-box p {
+
+    color: #94a3b8;
+
+    margin: 0 0 8px;
+}
+
+
+/* 버튼 */
+
+button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+#fireButton {
+
+    background: #dc2626;
+
+    color: white;
+}
+
+#resetButton {
+
+    background: #475569;
+
+    color: white;
+}
+
+
+/* 이벤트 기록 */
+
+.event-card {
+
+    grid-column: 1 / -1;
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 15px;
+}
+
+th,
+td {
+
+    padding: 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    color: #94a3b8;
+}
+
+
+/* 모바일 */
+
+@media(max-width: 800px) {
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        grid-column: 1;
+    }
+
+}

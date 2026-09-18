@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>화재 감시 로봇 관제 시스템</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>FIRE WATCH</h1>
+        <p>Autonomous Fire Detection Robot</p>
+    </div>
+
+    <div class="online">
+        ● SYSTEM ONLINE
+    </div>
+</header>
+
+
+<main>
+
+    <!-- 지도 영역 -->
+    <section class="map-card">
+
+        <div class="section-title">
+            <h2>실시간 순찰 지도</h2>
+            <span>LIVE</span>
+        </div>
+
+        <div id="map">
+
+            <!-- 로봇 -->
+            <div id="robot">
+                🚗
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--여기에 부수적인 내용 추가하면 될듯, 화재 위치 같은거(아닌가가)-->
+
+
+
+    <!-- 오른쪽 상태창 -->
+    <section class="status-card">
+
+        <h2>ROBOT STATUS</h2>
+
+        <div class="status-box">
+            <p>현재 상태</p>
+            <strong id="robotStatus">
+                ● 정상 순찰 중
+            </strong>
+        </div>
+
+        <div class="status-box">
+            <p>현재 위치</p>
+
+            <strong>
+                X:
+                <span id="robotX">2.0</span> m
+            </strong>
+
+            <br>
+
+            <strong>
+                Y:
+                <span id="robotY">3.0</span> m
+            </strong>
+        </div>
+
+
+        <div class="status-box">
+            <p>화재 센서</p>
+
+            <strong id="fireStatus">
+                ● NORMAL
+            </strong>
+        </div>
+
+
+        <div class="status-box">
+            <p>Raspberry Pi</p>
+            <strong>● ONLINE</strong>
+        </div>
+
+
+        <div class="status-box">
+            <p>ROS2</p>
+            <strong>● ONLINE</strong>
+        </div>
+
+
+        <!-- 테스트 버튼 -->
+        <button id="fireButton">
+            🔥 화재 감지 테스트
+        </button>
+
+        <button id="resetButton">
+            시스템 초기화
+        </button>
+
+    </section>
+
+
+    <!-- 화재 기록 -->
+    <section class="event-card">
+
+        <h2>FIRE EVENT LOG</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>발생 시각</th>
+                    <th>X 위치</th>
+                    <th>Y 위치</th>
+                    <th>상태</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="eventLog">
+
+                <tr>
+                    <td colspan="4">
+                        화재 감지 기록이 없습니다.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
